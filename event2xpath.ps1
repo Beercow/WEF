@@ -30,11 +30,11 @@ if (($node.node.IsEmpty -eq $false) -and ($node.node.'#text' -ne $null) -and ($n
     $Nname = $node.Node.Name
     #write-host $Nname
     if($node.node.Parentnode.ParentNode.Name -eq "Event"){
-    write-host "*[$($node.node.Parentnode.name)[($Nname=$Ntext)]]"}
+    write-host "*[$($node.node.Parentnode.name)[($Nname='$Ntext')]]"}
     if($node.node.Parentnode.ParentNode.ParentNode.Name -eq "Event"){
-    write-host "*[$($node.node.ParentNode.Parentnode.name)[$($node.node.parentnode.name)[($Nname=$Ntext)]]]"}
+    write-host "*[$($node.node.ParentNode.Parentnode.name)[$($node.node.parentnode.name)[($Nname='$Ntext')]]]"}
     if($node.node.Parentnode.ParentNode.ParentNode.Parentnode.Name -eq "Event"){
-    write-host "*[$($node.node.ParentNode.Parentnode.Parentnode.name)[$($node.node.ParentNode.Parentnode.name)[$($node.node.parentnode.name)[($Nname=$Ntext)]]]]"}
+    write-host "*[$($node.node.ParentNode.Parentnode.Parentnode.name)[$($node.node.ParentNode.Parentnode.name)[$($node.node.parentnode.name)[($Nname='$Ntext')]]]]"}
   }
 
 #Parses nodes that are not empty, not null and have attributes
@@ -49,9 +49,9 @@ if (($node.node.IsEmpty -eq $false) -and ($node.node.'#text' -ne $null) -and ($n
     if($node.node.Parentnode.ParentNode.Name -eq "Event"){
     write-host "*[$($node.node.Parentnode.name)[$($node.node.LocalName)[@Name='$Nname'] and ($($node.node.LocalName)='$Ntext')]]"}
     if($node.node.Parentnode.ParentNode.ParentNode.Name -eq "Event"){
-    write-host "*[$($node.node.ParentNode.Parentnode.name)[$($node.node.parentnode.name)[($Nname=$Ntext)]]]"}
+    write-host "*[$($node.node.ParentNode.Parentnode.name)[$($node.node.parentnode.name)[($Nname='$Ntext')]]]"}
     if($node.node.Parentnode.ParentNode.ParentNode.Parentnode.Name -eq "Event"){
-    write-host "*[$($node.node.ParentNode.Parentnode.Parentnode.name)[$($node.node.ParentNode.Parentnode.name)[$($node.node.parentnode.name)[($Nname=$Ntext)]]]]"}
+    write-host "*[$($node.node.ParentNode.Parentnode.Parentnode.name)[$($node.node.ParentNode.Parentnode.name)[$($node.node.parentnode.name)[($Nname='$Ntext')]]]]"}
     }
 
 #Parses nodes that are empty/null but have attributes
