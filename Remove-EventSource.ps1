@@ -10,7 +10,7 @@ foreach ($sub in $subscriptions){
             $LastHeartBeatTime = $reg.LastHeartBeatTime
             $date = [DateTime]::FromFileTime($LastHeartBeatTime)
             $today = Get-Date
-            $timediff = New-Timespan -Start $today -End $date
+            $timediff = New-Timespan -Start $date -End $today
             if ($timediff.Days -gt 30){
                 $wefclient = $reg.PSChildName
                 write-host "$wefclient has not checked in 30 days."
